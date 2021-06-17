@@ -1,0 +1,20 @@
+.upload-container {
+  text-align: center;
+}
+
+.upload-container > :not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.upload-container .drop-container {
+  padding: 30px;
+  background-color: #f5f9ff;
+  border: 1px dashed #a3c6ff;
+  border-radius: 12px;
+}
+
+.upload-container .drop-container span {
+  display: block;
+  margin-top: 20px;
+  font-size: 0.85em;
+}
