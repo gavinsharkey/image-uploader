@@ -18,3 +18,12 @@
   margin-top: 20px;
   font-size: 0.85em;
 }
+
+.upload-container .actions {
+  display: flex;
+  justify-content: center;
+}
+
+.upload-container .actions > :not(:last-child) {
+  margin-right: 10px;
+}

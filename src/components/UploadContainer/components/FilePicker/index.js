@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import Button from "../../../../common/Button";
+import { Button } from "../../../../common";
 import "./index.css";
 
 const FilePicker = ({ setFile }) => {
@@ -15,7 +15,7 @@ const FilePicker = ({ setFile }) => {
     const { current: fileInput } = fileInputRef;
 
     if (fileInput && fileInput.files.length) {
-      setFile(fileInput.files[0])
+      setFile(fileInput.files[0]);
     }
   };
 

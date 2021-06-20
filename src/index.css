@@ -34,3 +34,23 @@ img {
   object-fit: cover;
 }
 
+.main-container {
+  max-width: 95vw;
+  max-height: 90vh;
+  width: 500px;
+  padding: 30px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 12px;
+  background-color: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: auto;
+}
+
+.upload-container > :not(:last-child),
+.main-container > :not(:last-child) {
+  margin-bottom: 20px;
+}
+

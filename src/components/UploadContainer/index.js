@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { VALID_MIME_TYPES } from "./constants";
-import Button from "../../common/Button"
+import { Button } from "../../common/"
 import FileDropzone from "./components/FileDropzone";
 import FilePicker from "./components/FilePicker";
 import ContainerPhoto from "../ContainerPhoto";
@@ -32,7 +32,10 @@ const UploadContainer = ({ file, setFile, handleSubmit }) => {
   </>
 
   const uploadActions = !!file ? (
-    <Button onClick={handleSubmit}>Upload file</Button>
+    <div className="actions">
+      <FilePicker setFile={handleSetFile} />
+      <Button onClick={handleSubmit}>Upload file</Button>
+    </div>
   ) : (
     <>
       <span>Or</span>
