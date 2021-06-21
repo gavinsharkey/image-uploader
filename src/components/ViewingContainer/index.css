@@ -1,0 +1,26 @@
+.viewing-container > h2 {
+  text-align: center;
+}
+
+.link-container {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  border: 2px solid #e0e2e4;
+  border-radius: 12px;
+  padding: 2px 2px 2px 8px;
+}
+
+.link-container > span {
+  padding-right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+  color: #707c80;
+  font-size: 0.85em;
+}
+
+.link-container .button {
+  flex-shrink: 0;
+}

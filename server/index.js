@@ -48,7 +48,10 @@ app.post("/api/upload", (req, res) => {
         } else if (data) {
           res.status(201).send({
             status: "Created",
-            location: "/api/image/" + data.Key,
+            imageInfo: {
+              src: "/api/image/" + data.Key,
+              path: "/image/" + data.Key
+            },
           });
         }
       }

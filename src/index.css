@@ -50,6 +50,7 @@ img {
 }
 
 .upload-container > :not(:last-child),
+.viewing-container > :not(:last-child),
 .main-container > :not(:last-child) {
   margin-bottom: 20px;
 }

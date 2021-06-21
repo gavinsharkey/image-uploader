@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import { Error, Loading } from "../common";
-import ContainerPhoto from "../components/ContainerPhoto";
+import { Error, Loading } from "../../common";
+import ContainerPhoto from "../../components/ContainerPhoto";
 
 const ImageViewRoute = () => {
   const [error, setError] = useState(null);
@@ -23,19 +23,19 @@ const ImageViewRoute = () => {
   }, [key]);
 
   if (status === "loading") {
-    return <Loading />
+    return <Loading />;
   }
 
-  if (status === 'error') {
-    return <Error error={error} />
+  if (status === "error") {
+    return <Error error={error} />;
   }
 
   return (
     <>
-    <h2>{key}</h2>
-    <ContainerPhoto src={`/api/image/${key}`} />
+      <h2>{key}</h2>
+      <ContainerPhoto src={`/api/image/${key}`} />
     </>
-  )
+  );
 };
 
 export default ImageViewRoute;

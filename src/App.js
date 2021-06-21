@@ -1,6 +1,6 @@
 import { Route, Switch, Redirect } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
-import ImageViewRoute from "./ImageViewRoute";
+import ImageViewRoute from "./routes/ImageViewRoute";
 
 const App = () => {
   return <div className="main-container">

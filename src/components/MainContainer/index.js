@@ -17,7 +17,10 @@ const getBase64FromFile = (file, callback) => {
 
 const MainContainer = () => {
   const [file, setFile] = useState(null);
-  const [fileLink, setFileLink] = useState("");
+  const [uploadedImageInfo, setUploadedImageInfo] = useState({
+    src: "",
+    path: ""
+  })
   const [error, setError] = useState(null);
   const [status, setStatus] = useState("selecting");
 
@@ -25,7 +28,6 @@ const MainContainer = () => {
     if (!file) {
       return;
     }
-
     setStatus("loading");
 
     getBase64FromFile(file, async (base64String) => {
@@ -43,7 +45,7 @@ const MainContainer = () => {
         const data = await resp.json();
 
         if (resp.status === 201) {
-          setFileLink(data.location);
+          setUploadedImageInfo(data.imageInfo);
           setStatus("success");
         } else {
           setError(data.error);
@@ -58,7 +60,10 @@ const MainContainer = () => {
 
   const resetUploader = () => {
     setFile(null);
-    setFileLink("");
+    setUploadedImageInfo({
+      src: "",
+      path: ""
+    });
     setError(null);
     setStatus("selecting");
   };
@@ -74,7 +79,7 @@ const MainContainer = () => {
           />
         );
       case "success":
-        return <ViewingContainer fileLink={fileLink} />;
+        return <ViewingContainer imageInfo={uploadedImageInfo} />;
       case "loading":
         return <Loading />;
       case "error":
